@@ -1,0 +1,13 @@
+{
+  "name": "trpo-pr02-market",
+  "version": "1.0.0",
+  "description": "Практическая работа №2: адаптивный каталог на HTML и SCSS",
+  "scripts": {
+    "sass": "sass scss/styles.scss css/styles.css --no-source-map",
+    "watch": "sass --watch scss/styles.scss css/styles.css --no-source-map"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.105.1"
+  }
+}
