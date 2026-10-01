@@ -1,0 +1,32 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+.about {
+  padding: space(2.5) 0;
+  background: $color-accent-soft;
+
+  &__text {
+    margin: 0 0 space(1.5);
+    color: $color-muted;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: space(1);
+  }
+
+  &__item {
+    flex: 1 1 240px;
+    margin: 0;
+    overflow: hidden;
+    background: $color-surface;
+    border-radius: $radius;
+  }
+
+  &__caption {
+    padding: space(0.75);
+    font-weight: 700;
+    text-align: center;
+  }
+}

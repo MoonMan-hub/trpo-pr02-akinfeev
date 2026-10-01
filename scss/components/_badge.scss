@@ -1,0 +1,13 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+// Маленькая метка категории
+.badge {
+  display: inline-block;
+  padding: space(0.25) space(0.625);
+  border-radius: 999px;
+  background: $color-accent-soft;
+  color: $color-accent;
+  font-size: 0.8rem;
+  font-weight: 700;
+}

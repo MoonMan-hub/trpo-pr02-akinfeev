@@ -1,0 +1,45 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+.header {
+  background: $color-text;
+  color: $color-surface;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: space(1);
+    padding-top: space(1);
+    padding-bottom: space(1);
+  }
+
+  &__logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  &__nav {
+    display: flex;
+    gap: space(0.5);
+  }
+
+  &__link {
+    padding: space(0.5) space(0.75);
+    border-radius: $radius;
+    font-weight: 700;
+
+    &:hover {
+      background: $color-accent;
+    }
+  }
+}
+
+// Breakpoint 2: навигация уходит под логотип
+@media (max-width: $bp-mobile) {
+  .header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

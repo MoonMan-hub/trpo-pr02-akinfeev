@@ -1,0 +1,84 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+// Сетка карточек
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: space(1);
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+
+  &:hover {
+    border-color: $color-accent;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: space(0.5);
+    padding: space(1);
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    gap: space(0.5);
+    width: 100%;
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: $color-muted;
+  }
+
+  &__price,
+  &__rating {
+    margin: 0;
+  }
+
+  &__price {
+    font-weight: 700;
+    color: $color-text;
+  }
+}
+
+// Breakpoint 1: две колонки карточек
+@media (max-width: $bp-tablet) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Breakpoint 2: одна колонка, карточка становится компактной (картинка слева)
+@media (max-width: $bp-mobile) {
+  .products {
+    grid-template-columns: 1fr;
+    gap: space(0.75);
+  }
+
+  .product {
+    flex-direction: row;
+
+    &__image {
+      width: 120px;
+      object-fit: cover;
+    }
+  }
+}

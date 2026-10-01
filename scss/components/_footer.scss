@@ -1,0 +1,19 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+.footer {
+  padding: space(1.5) 0;
+  background: $color-text;
+  color: $color-surface;
+
+  &__text {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .footer__text {
+    font-size: 0.8rem;
+  }
+}

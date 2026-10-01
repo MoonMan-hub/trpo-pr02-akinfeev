@@ -1,0 +1,108 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+.filters {
+  padding: space(1.25);
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+
+  &__form {
+    display: grid;
+    gap: space(1);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  // fieldset без стандартной рамки
+  &__group {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: space(0.375);
+    padding: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  &__row {
+    display: flex;
+    gap: space(0.5);
+  }
+
+  &__field {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.85rem;
+    color: $color-muted;
+  }
+
+  &__input {
+    width: 100%;
+    padding: space(0.625);
+    border: 1px solid $color-border;
+    border-radius: $radius;
+    background: $color-surface;
+    color: $color-text;
+    font: inherit;
+
+    &:hover,
+    &:focus-visible {
+      border-color: $color-accent;
+    }
+
+    // Ошибочный ввод (например, отрицательная цена)
+    &:invalid {
+      border-color: $color-error;
+    }
+  }
+
+  &__radio {
+    display: flex;
+    align-items: center;
+    gap: space(0.5);
+    margin-bottom: space(0.25);
+  }
+
+  &__button {
+    padding: space(0.75) space(1.25);
+    border: 0;
+    border-radius: $radius;
+    background: $color-accent;
+    color: $color-surface;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-accent-dark;
+    }
+  }
+}
+
+// Breakpoint 1: панель над карточками, поля идут в две колонки
+@media (max-width: $bp-tablet) {
+  .filters__form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filters__title,
+  .filters__button {
+    grid-column: 1 / -1;
+  }
+}
+
+// Breakpoint 2: на телефоне поля в одну колонку
+@media (max-width: $bp-mobile) {
+  .filters__form {
+    grid-template-columns: 1fr;
+  }
+}
