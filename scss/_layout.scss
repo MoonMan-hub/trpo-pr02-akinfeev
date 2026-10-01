@@ -1,0 +1,42 @@
+@use 'variables' as *;
+@use 'functions' as *;
+@use 'mixins' as *;
+
+.container {
+  @include container;
+}
+
+// Заголовок каталога
+.catalog {
+  padding: space(2) 0;
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__text {
+    margin: 0 0 space(1.5);
+    color: $color-muted;
+  }
+}
+
+// Основная раскладка: панель фильтров слева, карточки справа
+.market {
+  display: grid;
+  grid-template-columns: $sidebar-width minmax(0, 1fr);
+  gap: space(1.5);
+  align-items: start;
+}
+
+// Breakpoint 1: панель фильтров переносится над карточками
+@media (max-width: $bp-tablet) {
+  .market {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .catalog__title {
+    font-size: 1.6rem;
+  }
+}

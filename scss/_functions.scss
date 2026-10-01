@@ -1,0 +1,6 @@
+@use 'variables' as *;
+
+// Отступ, кратный базовому: space(2) -> 32px, space(0.5) -> 8px
+@function space($n) {
+  @return $n * $space;
+}

@@ -1,0 +1,23 @@
+// Значения из data/theme.json
+$color-accent: #315efb;
+$color-surface: #ffffff;
+$color-background: #f5f7fb;
+$color-text: #1f2937;
+$radius: 14px;
+$space: 16px;
+
+// Дополнительные значения
+$color-accent-dark: #2146d4;
+$color-accent-soft: #e9efff;
+$color-muted: #667085;
+$color-border: #e5e7eb;
+$color-error: #d92d20;
+$font-main: Arial, Helvetica, sans-serif;
+
+// Размеры макета
+$container-width: 1100px;
+$sidebar-width: 260px;
+
+// Точки перелома (breakpoints)
+$bp-tablet: 900px;
+$bp-mobile: 560px;

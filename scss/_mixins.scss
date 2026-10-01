@@ -1,0 +1,16 @@
+@use 'variables' as *;
+@use 'functions' as *;
+
+// Адаптивный контейнер: центрируется и не шире $container-width
+@mixin container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 space(1);
+}
+
+// Видимое состояние фокуса для клавиатуры
+@mixin focus-ring {
+  outline: 3px solid #a9bbff;
+  outline-offset: 2px;
+}
